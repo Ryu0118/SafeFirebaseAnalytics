@@ -3,7 +3,7 @@ import FirebaseAnalytics
 
 /// Represents predefined Firebase Analytics event names in a type-safe manner.
 /// Each case corresponds to a Firebase Analytics event name.
-public enum AnalyticsEvent: CaseIterable, Hashable, Codable {
+public enum AnalyticsEvent: Hashable, Codable {
     /// Ad Impression event. Signifies when a user sees an ad impression.
     case adImpression
     /// Add Payment Info event. Signifies that a user has submitted their payment information.
@@ -74,6 +74,8 @@ public enum AnalyticsEvent: CaseIterable, Hashable, Codable {
     case viewPromotion
     /// View Search Results event. Signifies that a user has been presented with the results of a search.
     case viewSearchResults
+    /// custom event
+    case custom(String)
 
     /// The Firebase Analytics event name string.
     /// This property provides the corresponding event name for each AnalyticsEvent case.
@@ -150,6 +152,8 @@ public enum AnalyticsEvent: CaseIterable, Hashable, Codable {
             return AnalyticsEventViewPromotion
         case .viewSearchResults:
             return AnalyticsEventViewSearchResults
+        case .custom(let custom):
+            return custom
         }
     }
 }

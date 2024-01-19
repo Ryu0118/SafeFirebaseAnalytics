@@ -15,7 +15,9 @@ public extension Analytics {
     ) {
         logEvent(
             name.name,
-            parameters: parameters?.mapKeys(\.name)
+            parameters: parameters?
+                .mapKeys(\.name)
+                .compactMapValues { $0 as? NSObject }
         )
     }
 
@@ -51,7 +53,9 @@ public extension Analytics {
     ) {
         logEvent(
             name,
-            parameters: parameters?.mapKeys(\.name)
+            parameters: parameters?
+                .mapKeys(\.name)
+                .compactMapValues { $0 as? NSObject }
         )
     }
 }

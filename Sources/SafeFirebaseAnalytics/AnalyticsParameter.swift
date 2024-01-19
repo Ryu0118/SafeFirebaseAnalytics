@@ -142,6 +142,9 @@ public enum AnalyticsParameter: Hashable, CaseIterable, Codable {
     /// Name of virtual currency type (String).
     case virtualCurrencyName
 
+    /// custom parameter
+    case custom(String)
+
     /// The Firebase Analytics parameter name string.
     /// This property provides the corresponding parameter name for each AnalyticsParameter case.
     /// It is used to map the enum case to the actual parameter name string used in Firebase Analytics events.
@@ -285,6 +288,8 @@ public enum AnalyticsParameter: Hashable, CaseIterable, Codable {
             return AnalyticsParameterValue
         case .virtualCurrencyName:
             return AnalyticsParameterVirtualCurrencyName
+        case .custom(let custom):
+            return custom
         }
     }
 }
