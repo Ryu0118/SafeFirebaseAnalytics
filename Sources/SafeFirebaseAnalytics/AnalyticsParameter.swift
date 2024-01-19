@@ -2,7 +2,7 @@ import FirebaseAnalytics
 
 /// Represents predefined Firebase Analytics event parameters in a type-safe manner.
 /// Each case corresponds to a Firebase Analytics parameter name.
-public enum AnalyticsParameter: Hashable, CaseIterable, Codable {
+public enum AnalyticsParameter: Hashable, Codable {
     /// Game achievement ID (String).
     case achievementID
     /// The ad format (e.g. Banner, Interstitial, Rewarded, Native, Rewarded Interstitial, Instream) (String).
